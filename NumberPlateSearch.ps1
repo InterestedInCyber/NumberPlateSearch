@@ -28,10 +28,10 @@ function AskForLicensePlate {
     while ($PlateNumber.Length -eq 7) {
 
         $registrationNumber = '{"registrationNumber": "' + $PlateNumber + '"}'
-        $response = Invoke-WebRequest -Headers @{"x-api-key" = "Qb0lw93DmaFVozdu2fP24fxrRoP31b56CikLMOmj" } -Method POST -Body $registrationNumber -Uri https://driver-vehicle-licensing.api.gov.uk/vehicle-enquiry/v1/vehicles
+        $response = Invoke-WebRequest -Headers @{"x-api-key" = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" } -Method POST -Body $registrationNumber -Uri https://driver-vehicle-licensing.api.gov.uk/vehicle-enquiry/v1/vehicles
         
         if ($response.StatusCode -eq 200) {
-            $CarDetails = Invoke-RestMethod -Headers @{"x-api-key" = "Qb0lw93DmaFVozdu2fP24fxrRoP31b56CikLMOmj" } -Method POST -Body $registrationNumber -Uri https://driver-vehicle-licensing.api.gov.uk/vehicle-enquiry/v1/vehicles
+            $CarDetails = Invoke-RestMethod -Headers @{"x-api-key" = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" } -Method POST -Body $registrationNumber -Uri https://driver-vehicle-licensing.api.gov.uk/vehicle-enquiry/v1/vehicles
             
             Write-Host ""
             Write-Host "Vehicle Found       : " -NoNewline; Write-Host ($CarDetails.registrationNumber) -ForegroundColor Yellow
